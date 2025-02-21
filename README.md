@@ -2,12 +2,12 @@
 A powerful Python script to list Magento database tables and perform MySQL dumps with filtering and compression.
 
 # Features
-✅ Show Table Sizes: Lists only tables larger than 1MB, sorted by size.
-✅ Dump Full Database: Dumps all tables, ignoring predefined ones.
-✅ Interactive CLI: Select options using an interactive menu.
-✅ Progress Tracking: Shows real-time progress during MySQL dump.
-✅ Config Auto-Detection: Reads Magento env.php for database settings.
-✅ Compression: Dumps are gzip compressed for storage efficiency.
+✅ Show Table Sizes: Lists only tables larger than 1MB, sorted by size.<\br>
+✅ Dump Full Database: Dumps all tables, ignoring predefined ones.<\br>
+✅ Interactive CLI: Select options using an interactive menu.<\br>
+✅ Progress Tracking: Shows real-time progress during MySQL dump.<\br>
+✅ Config Auto-Detection: Reads Magento env.php for database settings.<\br>
+✅ Compression: Dumps are gzip compressed for storage efficiency.<\br>
 
 # Installation
 1. Clone the Repository
