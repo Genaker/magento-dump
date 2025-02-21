@@ -12,6 +12,7 @@ def get_db_config_from_env():
     """Run PHP command to get env.php configuration and extract database credentials."""
     try:
         cwd = os.getcwd()
+        print("CWD:" + cwd)
         possible_paths = [
             f'{cwd}/app/etc/env.php',
             f'{cwd}/../app/etc/env.php',
@@ -21,7 +22,7 @@ def get_db_config_from_env():
         for path in possible_paths:
             command = ['php', '-r', f'echo json_encode(include "{path}");']
             result = subprocess.run(command, capture_output=True, text=True)
-            if result.returncode == 0 and result.stdout:
+            if result.returncode == 0 and result.stdout != "false":
                 config = json.loads(result.stdout)
                 db_config = config.get('db', {}).get('connection', {}).get('default', {})
                 return {
@@ -156,8 +157,7 @@ def show_commands():
         print("👋 Exiting. Have a great day!")
         sys.exit(0)
 
-if __name__ == "__main__":
-    # Parse command-line arguments
+def main():
     parser = argparse.ArgumentParser(description="Magento Database Tool")
     parser.add_argument("command", nargs="?", help="Command to execute: show-tables, db-dump")
     args = parser.parse_args()
@@ -170,3 +170,6 @@ if __name__ == "__main__":
         perform_db_dump(config)
     else:
         show_commands()
+
+if __name__ == "__main__":
+    main()

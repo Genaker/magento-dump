@@ -69,5 +69,31 @@ To schedule daily database backups at midnight, add this to crontab -e:
 ```
 0 0 * * * /usr/bin/python3 /path/to/magento_db_tool.py db-dump
 ```
+
+## Deploy to PyPI, follow these steps:
+
+1️. Install Twine (if not installed)
+```
+pip install twine
+```
+
+2️. Build the Package
+Inside your project root (magento-dump/):
+
+```
+pip install --upgrade setuptools
+python setup.py sdist bdist_wheel
+```
+
+3️. Upload to PyPI
+```
+twine upload dist/*
+```
+This will ask for your PyPI credentials. Once uploaded, you can install your package with:
+
+```
+pip install magento-dump
+```
+
 📜 License
 MIT License. Free to use and modify.

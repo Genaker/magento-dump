@@ -1,0 +1,2 @@
+tqdm
+simple-term-menuls
