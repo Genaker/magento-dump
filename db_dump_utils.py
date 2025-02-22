@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import os
 import time
 from datetime import datetime
 from tqdm import tqdm
@@ -27,7 +28,9 @@ def list_all_tables(config):
 def perform_db_dump(config):
     """Perform the MySQL database dump with gzip compression and track progress."""
     timestamp = datetime.now().strftime('%Y%m%d')
-    dump_filename = f"{config['db_name']}_dump_{timestamp}.sql.gz"
+    dump_dir = 'dmp/'
+    os.makedirs(dump_dir, exist_ok=True)
+    dump_filename = f"{dump_dir}{config['db_name']}_dump_{timestamp}.sql.gz"
 
     all_tables = list_all_tables(config)
     ignore_params = [f"--ignore-table={config['db_name']}.{table}" for table in config.get("ignore_tables", [])]
