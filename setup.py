@@ -1,17 +1,17 @@
 from setuptools import setup
 
 setup(
-    name="magento-dump",  # ✅ Package name
-    version="1.0.3",
-    py_modules=["magento_dump"],  # ✅ Use root-level script
+    name="magento-dump",  #Package name
+    version="1.0.5",
+    py_modules=["magento_dump"],  #Use root-level script
     install_requires=[
         "tqdm", 
         "simple-term-menu",
     ],
     entry_points={
         "console_scripts": [
-            "magento-dump=magento_dump:main",  # ✅ CLI command
-            "magento-dump-tool=magento_dump:main",  # ✅ Alternative CLI command
+            "magento-dump=magento_dump:main",  #CLI command
+            "magento-dump-tool=magento_dump:main",  #Alternative CLI command
         ],
     },
     author="Yehor Shytikov",
