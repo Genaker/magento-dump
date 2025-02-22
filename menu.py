@@ -2,6 +2,18 @@ from simple_term_menu import TerminalMenu
 from db_config import get_db_config_from_env
 from table_utils import list_large_tables
 from dump_utils import perform_db_dump
+import argparse
+
+def execute_command(command):
+    """Execute the command either via CLI arguments or interactive menu."""
+    config = get_db_config_from_env()
+
+    if command == "show-tables":
+        list_large_tables(config)
+    elif command == "db-dump":
+        perform_db_dump(config)
+    else:
+        show_commands()
 
 def show_commands():
     """Interactive menu with descriptions."""
@@ -15,11 +27,9 @@ def show_commands():
     selection = menu.show()
 
     if selection == 0:
-        config = get_db_config_from_env()
-        list_large_tables(config)
+        execute_command("show-tables")
     elif selection == 1:
-        config = get_db_config_from_env()
-        perform_db_dump(config)
+        execute_command("db-dump")
     else:
         print("👋 Exiting. Have a great day!")
         exit()
