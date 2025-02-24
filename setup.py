@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="magento-dump",  #Package name
-    version="1.0.8",
+    version="1.0.9",
     py_modules=["magento_dump"],  #Use root-level script
     install_requires=[
         "tqdm", 
