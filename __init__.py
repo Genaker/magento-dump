@@ -1,1 +1,0 @@
-# This file marks "magento-dump" as a Python package

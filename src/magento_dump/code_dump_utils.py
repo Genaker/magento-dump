@@ -58,8 +58,13 @@ def dump_magento_media():
         "--exclude=pub/media/import/*",
         "--exclude=pub/media/captcha/*",
         "--exclude=pub/media/catalog/product/cache/*",
-        "--exclude=pub/media/catalog/category/cache/*"
-        
+        "--exclude=pub/media/catalog/category/cache/*",
+        "--exclude=.git/*",
+        "--exclude=dmp/*",
+        "--exclude=generated/*",
+        "--exclude=magento-dump/*",
+        "--exclude=node_modules/*",
+        "--exclude=myenv/*"
     ]
 
     # ✅ Corrected tar command with verbose option

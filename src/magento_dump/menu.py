@@ -1,8 +1,8 @@
 from simple_term_menu import TerminalMenu
-from db_config import get_db_config_from_env
-from table_utils import list_large_tables
-from db_dump_utils import perform_db_dump
-from code_dump_utils import dump_magento_code, dump_magento_media
+from .db_config import get_db_config_from_env
+from .table_utils import list_large_tables
+from .db_dump_utils import perform_db_dump
+from .code_dump_utils import dump_magento_code, dump_magento_media
 import argparse
 
 def execute_command(command):
@@ -26,7 +26,7 @@ def show_commands():
         "📋 Show Large Tables  → List only tables > 1MB with row counts & sizes",
         "💾 Dump All Tables    → Create a full database dump (gzip compressed)",
         "🗃 Dump Magento Code  → Archive Magento codebase excluding media/cache",
-        "🗃 Dump Magento Media  → Archive Magento media excluding media/cache",
+        "📷 Dump Magento Media  → Archive Magento media excluding media/cache",
         "❌ Exit               → Quit the tool"
     ]
     

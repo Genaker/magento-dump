@@ -1,5 +1,5 @@
 import argparse
-from menu import execute_command
+from .menu import execute_command
 
 def main():
     parser = argparse.ArgumentParser(description="Magento Database Tool")

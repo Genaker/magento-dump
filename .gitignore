@@ -3,3 +3,5 @@ dist
 magento_dump.egg-info
 venv
 __pycache__
+myenv
+dump

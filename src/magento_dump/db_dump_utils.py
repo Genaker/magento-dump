@@ -4,7 +4,7 @@ import os
 import time
 from datetime import datetime
 from tqdm import tqdm
-from table_utils import list_large_tables
+from .table_utils import list_large_tables
 
 def list_all_tables(config):
     """Fetch all tables for the database."""
@@ -45,7 +45,7 @@ def perform_db_dump(config):
                 f"mysqldump --single-transaction -u {config['db_user']} -p{config['db_password']} "
                 f"-h {config['db_host']} {config['db_name']} --triggers "
                 f"--tables {table} {' '.join(ignore_params)} "
-                f"| sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip >> {dump_filename}"
+                f"| sed -e \"s/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/\" | gzip >> {dump_filename}"
             )
 
             try:

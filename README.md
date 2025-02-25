@@ -89,6 +89,18 @@ python setup.py sdist bdist_wheel
 ```
 twine upload dist/*
 ```
+or
+```
+rm -rf dist/ && python setup.py sdist bdist_wheel && twine upload dist/*
+```
+or new wey:
+```
+pip install build
+rm -rf dist/*
+python -m build
+pip install twine
+twine upload dist/*
+```
 This will ask for your PyPI credentials. Once uploaded, you can install your package with:
 
 ```
